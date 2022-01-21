@@ -1,0 +1,9 @@
+sudo: required
+services:
+        - docker
+
+before_install:
+        - docker build -t madan4job/docker-react -f Dockerfile.dev .
+
+script:
+        - docker run madan4job/docker-react npm run test -- --coverage
